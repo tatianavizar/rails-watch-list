@@ -1,0 +1,23 @@
+<%= simple_form_for([@list, bookmark]) do |f| %>
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">New Bookmark</h2>
+
+            <%= f.input :movie_id, label: "Select a movie", input_html: { class: "form-control" }, label_html: { class: "form-label" } do %>
+            <%= f.collection_select :movie_id, @movies, :id, :title, { prompt: "Select a movie" }, { class: "form-control" } %>
+            <% end %>
+
+            <%= f.input :comment, label: "Write a comment", input_html: { class: "form-control" }, label_html: { class: "form-label" } %>
+
+            <div class="d-flex justify-content-center mt-4">
+              <%= f.submit "Save bookmark", class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

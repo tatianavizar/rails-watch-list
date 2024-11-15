@@ -1,0 +1,28 @@
+<div class="container my-5">
+  <!-- Movie Details Section -->
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <!-- Movie Image -->
+        <img src="<%= @movie.url %>" class="card-img-top" alt="<%= @movie.title %> poster" style="max-height: 400px; object-fit: cover;">
+        <div class="card-body">
+          <!-- Movie Title -->
+          <h2 class="card-title text-center text-primary display-4"><%= @movie.title %></h2>
+          <!-- Movie Description -->
+          <p class="card-text text-muted text-center my-4"><%= @movie.overview %></p>
+          <!-- Movie Rating -->
+          <div class="text-center">
+            <span class="badge bg-success fs-5">Rating: <%= @movie.rating %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to All Movies Button -->
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6 text-center">
+      <%= link_to "Back to All Movies", movies_path, class: "btn btn-primary px-4 py-2 shadow-sm" %>
+    </div>
+  </div>
+</div>
